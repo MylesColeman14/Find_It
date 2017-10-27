@@ -1,0 +1,80 @@
+#map_display {
+	width: 1100px;
+	height: 600px;
+	margin: auto;
+	display: flex;
+	align-items: flex-end;
+	position: relative;
+	background-color: rgb(197,187,187);
+}
+
+header {
+	width: 1100px;
+	height: 100px;
+	background: rgba(77,84,134, .7);
+	color: white;
+	margin: auto;
+	font-family: 'Comfortaa', cursive;
+	font-size: 50pt;
+	text-align: center;
+	text-shadow: 3px 3px 2px black;
+	opacity: .9;
+}
+
+body {
+	background-color: gray;
+	background-size: cover;
+}
+
+#side-bar {
+	background: rgba(47,79,79, 1);
+	width: 250px;
+	height: 600px;
+	vertical-align: middle;
+	display: flex;
+	justify-content: center;
+}
+
+.user_input {
+	color: #979494;
+	
+}
+
+#input_form {
+	width: 90%;
+	margin: auto;
+	align-items: center;
+	padding: 0px 15px;
+
+}
+
+#listing-display {
+	background-color: lightgray;
+	width: 500px;
+	height: 225px;
+	margin: auto;
+	position: absolute;
+	bottom: 30px;
+	right: 300px;
+	border-radius: 10px;
+	overflow: scroll;
+	opacity: .9;
+	display: none;
+}
+
+#submit {
+	border-radius: 50px;
+}
+
+#weather_report {
+	height: 120px;
+	width: 120px;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	background: rgba(255,248,220, .8);
+	border-radius: 10px;
+	opacity: .9;
+	display: none;
+
+}

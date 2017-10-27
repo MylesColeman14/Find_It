@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<link href="https://fonts.googleapis.com/css?family=Comfortaa|Open+Sans" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+	 <script type="text/javascript" src="assets-two/materialize-src/js/sideNav.js"></script>
+
+	 <script type="text/javascript" src="assets-two/logic.js"></script>
+
+
+	<link rel="stylesheet" type="text/css" href="assets-two/style.css">
+	<title></title>
+
+</head>
+<body>
+
+	<header>
+		
+		FIND IT
+
+	</header>
+
+	<!-- everything needs to be in this section -->
+	<section id="map_display">
+
+		<!-- weather populates here -->
+		<div id="weather_report">
+		</div>
+
+		<!-- FORM. Enter User Data -->
+		<div id="side-bar">
+
+    		<form class="col s12" id="input_form">
+      			
+      			<div class="input-field col s12">
+       			 	<input class="user_input" id="current_location" placeholder="Current Location">
+      			</div>
+      			<div class="input-field col s12">
+        			<input class="user_input" id="destination" placeholder="Destination">
+     			 </div>
+     			 <div class="input-field col s12">
+       		 		<input class="user_input" id="looking_for" placeholder="What are you looking to do?">
+      			</div>
+               
+      			
+      			<button id="submit" class="btn" onclick="sidebarslide()">Submit</button>
+    		
+    		</form>
+
+    	</div>	
+    	<!-- FORM ENDS HERE -->
+
+    	<!-- listings populate here -->
+    	<div id="listing-display"></div>
+	
+	</section>
+
+
+</body>
+</html>
