@@ -26,18 +26,12 @@ body {
 	background-size: cover;
 }
 
-#side-bar {
-	background: rgba(47,79,79, 1);
-	width: 250px;
-	height: 600px;
-	vertical-align: middle;
-	display: flex;
-	justify-content: center;
+.user_input {
+	color: white;
 }
 
-.user_input {
+.user_input::placeholder {
 	color: #979494;
-	
 }
 
 #input_form {
@@ -45,7 +39,17 @@ body {
 	margin: auto;
 	align-items: center;
 	padding: 0px 15px;
+}
 
+#menu {
+	position: absolute;
+	left: 50px;
+	bottom: 50px;
+}
+
+#menu_icon {
+	height: 100px;
+	width: 100px;
 }
 
 #listing-display {

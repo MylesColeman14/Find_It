@@ -35,24 +35,30 @@
 		</div>
 
 		<!-- FORM. Enter User Data -->
-		<div id="side-bar">
 
-    		<form class="col s12" id="input_form">
-      			
-      			<div class="input-field col s12">
-       			 	<input class="user_input" id="current_location" placeholder="Current Location">
-      			</div>
-      			<div class="input-field col s12">
-        			<input class="user_input" id="destination" placeholder="Destination">
-     			 </div>
-     			 <div class="input-field col s12">
-       		 		<input class="user_input" id="looking_for" placeholder="What are you looking to do?">
-      			</div>
-               
-      			
-      			<button id="submit" class="btn" onclick="sidebarslide()">Submit</button>
+    				<!-- Element Showed -->
+  <a id="menu" class="waves-effect waves-light btn btn-floating" onclick="showform()"><i class="material-icons"></i></a>
+
+  <!-- Tap Target Structure -->
+  		<div class="tap-target" data-activates="menu">
     		
-    		</form>
+    		<div class="tap-target-content">
+      
+      			<form class="col s12" id="input_form">
+      			
+	      			<div class="input-field col s12">
+	       			 	<input class="user_input" id="current_location" value="Current Location">
+	      			</div>
+	      			<div class="input-field col s12">
+	        			<input class="user_input" id="destination" placeholder="Destination">
+	     			 </div>              
+	      			
+	      			<button id="submit" class="btn" onclick="sidebarslide()">Submit</button>
+    		
+    			</form>
+    		</div>
+ 
+ 		</div>
 
     	</div>	
     	<!-- FORM ENDS HERE -->

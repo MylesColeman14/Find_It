@@ -1,8 +1,3 @@
-function sidebarslide() {
-    event.preventDefault();
-    $("#side-bar").hide();
-  }
-
 (function ($) {
 
   var methods = {
