@@ -10,3 +10,9 @@ function showform() {
 		$('.tap-target').tapTarget('close');
 	}
 }
+
+function submission () {
+	event.preventDefault();
+	$("#weather_report").show();
+	$("#listing-display").show();
+}
