@@ -6,12 +6,14 @@ function locationInput(){
 	getDirections(startLocation,endLocation);
 
 	console.log("Location input:"+startLocation+ "+"+endLocation);
+	submission();
 }
 //function changeTravel(){
 	//$(this).attr('src', $(this).attr('data-animate'))
 //	transitMode = $(this).value;
 //}
 $(document).on("click", "#find-button", locationInput);
+$(document).on("click", "#menu", showform);
 
 //$(document).on("click", ".transit-mode", changeTravel);
 
