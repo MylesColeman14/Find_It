@@ -1,4 +1,3 @@
-
 let startLocation, endLocation;
 var markerArray = [];
 let stepDisplay = new google.maps.InfoWindow;
