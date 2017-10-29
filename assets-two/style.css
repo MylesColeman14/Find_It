@@ -1,74 +1,73 @@
-#map_display {
-  width: 1100px;
-  height: 600px;
-  margin: auto;
-  display: flex;
-  align-items: flex-end;
-  position: relative;
-  background-color: #c5bbbb; }
+#map-display {
+  background-color: white;
+  box-shadow: 2px 2px 2px black;
+  width: 90%;
+  min-width: 410px;
+  margin: 0 auto; }
 
 header {
-  width: 1100px;
-  height: 100px;
-  background: rgba(77, 84, 134, 0.7);
-  color: white;
+  background-color: black;
+  box-shadow: 3px 3px 3px black;
+  min-height: 140px;
+  display: flex;
+  text-align: center; }
+
+header p {
   margin: auto;
   font-family: 'Comfortaa', cursive;
   font-size: 50pt;
-  text-align: center;
-  text-shadow: 3px 3px 2px black;
-  opacity: .9; }
+  color: white;
+  text-shadow: 3px 3px 2px #ffb58b; }
 
 body {
   background-color: gray;
-  background-size: cover; }
+  text-align: center; }
 
 .user_input {
-  color: white; }
+  color: #ffb58b; }
+
+input[value] {
+  font-weight: bold;
+  font-size: 16px; }
 
 .user_input::placeholder {
-  color: #979494; }
-
-#input_form {
-  width: 90%;
-  margin: auto;
-  align-items: center;
-  padding: 0px 15px; }
+  color: white; }
 
 #menu {
-  position: absolute;
-  left: 50px;
-  bottom: 50px; }
+  position: fixed;
+  left: 5px;
+  bottom: 5px; }
 
-#menu_icon {
-  height: 100px;
-  width: 100px; }
-
-#listing-display {
+#twitter-display {
   background-color: lightgray;
-  width: 500px;
-  height: 225px;
-  margin: auto;
-  position: absolute;
-  bottom: 30px;
-  right: 300px;
   border-radius: 10px;
   overflow: scroll;
+  opacity: .9;
+  box-shadow: 2px 2px 2px black;
+  margin: 0 auto;
+  position: relative;
+  height: 200px;
+  width: 400px;
+  display: none; }
+
+#weather-display {
+  height: 120px;
+  width: 120px;
+  background-color: lightgray;
+  box-shadow: 2px 2px 2px black;
+  border-radius: 10px;
+  position: relative;
+  float: right;
+  top: 10px;
+  right: 10px;
+  margin-bottom: 10px;
   opacity: .9;
   display: none; }
 
 #submit {
   border-radius: 50px; }
 
-#weather_report {
-  height: 120px;
-  width: 120px;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: rgba(255, 248, 220, 0.8);
-  border-radius: 10px;
-  opacity: .9;
-  display: none; }
+.tap-target {
+  background-color: black; }
 
 /*# sourceMappingURL=style.css.map */

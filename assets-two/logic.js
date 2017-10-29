@@ -13,6 +13,7 @@ function showform() {
 
 function submission () {
 	event.preventDefault();
-	$("#weather_report").show();
-	$("#listing-display").show();
+	$("#weather-display").show();
+	$("#twitter-display").show();
+	$('.tap-target').tapTarget('close');
 }

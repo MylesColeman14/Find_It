@@ -1,6 +1,6 @@
 .tap-target-wrapper {
-  width: 800px;
-  height: 800px;
+  width: 675px;
+  height: 675px;
   position: fixed;
   z-index: 1000;
   visibility: hidden;
@@ -9,6 +9,7 @@
 
 .tap-target-wrapper.open {
   visibility: visible;
+  background-color: black;
   transition: visibility 0s;
 
   .tap-target {
@@ -36,7 +37,7 @@
   position: absolute;
   font-size: 1rem;
   border-radius: 50%;
-  background-color: $primary-color;
+  background-color: black;
   box-shadow: 0 20px 20px 0 rgba(0,0,0,0.14), 0 10px 50px 0 rgba(0,0,0,0.12), 0 30px 10px -20px rgba(0,0,0,0.2);
   width: 100%;
   height: 100%;
@@ -48,6 +49,7 @@
 }
 
 .tap-target-content {
+  position: relative;
   display: table-cell;
 }
 

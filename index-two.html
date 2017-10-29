@@ -10,7 +10,7 @@
 
 	 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 
-	 <script type="text/javascript" src="assets-two/materialize-src/js/sideNav.js"></script>
+	 <script type="text/javascript" src="/Users/CharBar/Desktop/Project-1/Find_It/assets-two/materialize-src/js/tapTarget.js"></script>
 
 	 <script type="text/javascript" src="assets-two/logic.js"></script>
 
@@ -21,52 +21,49 @@
 </head>
 <body>
 
-	<header>
-		
-		FIND IT
+ <header>
+    <p>Find It</p>
+  </header>
 
-	</header>
+ <section>
 
-	<!-- everything needs to be in this section -->
-	<section id="map_display">
+ <!-- Map populates in background -->
+    <div id="map-display">      
 
-		<!-- weather populates here -->
-		<div id="weather_report">
-		</div>
+       <!-- Weather populates here -->
+      <div id="weather-display">
+      </div>
 
-		<!-- FORM. Enter User Data -->
+        <!-- Local Tweets populate here -->
+      <div id="twitter-display"></div>
 
-    				<!-- Element Showed -->
-  <a id="menu" class="waves-effect waves-light btn btn-floating" onclick="showform()"><i class="material-icons"></i></a>
+   </div>
 
-  <!-- Tap Target Structure -->
-  		<div class="tap-target" data-activates="menu">
-    		
-    		<div class="tap-target-content">
-      
-      			<form class="col s12" id="input_form">
-      			
-	      			<div class="input-field col s12">
-	       			 	<input class="user_input" id="current_location" value="Current Location">
-	      			</div>
-	      			<div class="input-field col s12">
-	        			<input class="user_input" id="destination" placeholder="Destination">
-	     			 </div>              
-	      			
-	      			<button id="submit" class="btn" onclick="submission()">Submit</button>
-    		
-    			</form>
-    		</div>
- 
- 		</div>
+ <!-- User input data here -->
+  <a id="menu" onclick="showform()" class="waves-effect waves-light btn btn-floating" ><i class="material-icons"></i></a>
 
-    	</div>	
-    	<!-- FORM ENDS HERE -->
+     <!-- Tap Target Structure -->
+      <div class="tap-target" data-activates="menu">
+        <div class="tap-target-content">
+            
+           <!-- Manipulate form here -->
+            <form class="col s12" id="input_form">
+            
+             <div class="input-field col s12">
+                <input class="user_input" id="current_location" value="Current Location">
+              </div>
+              <div class="input-field col s12">
+                <input class="user_input" id="destination" placeholder="Destination">
+             </div>              
+             
+             <button id="submit" class="btn" onclick="submission()">Submit</button>
+        
+           </form>
 
-    	<!-- listings populate here -->
-    	<div id="listing-display"></div>
-	
-	</section>
+       </div>
+      </div>
+
+ </section>
 
 
 </body>
