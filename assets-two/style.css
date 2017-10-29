@@ -3,7 +3,8 @@
   box-shadow: 2px 2px 2px black;
   width: 90%;
   min-width: 410px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  background-image: url(random.jpg); }
 
 header {
   background-color: black;
@@ -69,5 +70,12 @@ input[value] {
 
 .tap-target {
   background-color: black; }
+
+.flex {
+  display: flex;
+  flex-direction: column; }
+  .flex__right {
+    display: flex;
+    justify-content: flex-end; }
 
 /*# sourceMappingURL=style.css.map */

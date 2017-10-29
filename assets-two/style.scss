@@ -4,6 +4,7 @@
     width: 90%;
     min-width: 410px;
     margin: 0 auto;
+    background-image: url(random.jpg);
 }
 
 header {
@@ -82,4 +83,16 @@ input[value] {
 
 .tap-target {
 	background-color: black;
+}
+
+
+.flex {
+	display: flex;
+	 flex-direction: column;
+
+	 &__right {
+	 	display: flex;
+	 	justify-content: flex-end;
+	 }
+
 }
