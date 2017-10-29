@@ -1,24 +1,30 @@
-function createMarker(location){
-    for( i = 0; i < markers.length; i++ ) {
-        var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
+let currentLocation;
+let toolsMarkerArray=[]
+let marker;
+function createMarker(location, content, map){
+    let bounds = new google.maps.LatLngBounds();
+        let position = new google.maps.LatLng(location.coords.latitude, location.coords.longitude);
         bounds.extend(position);
         marker = new google.maps.Marker({
             position: position,
             map: map,
-            title: markers[i][0]
+            title: 'Hello World'
         });
+        
+        toolsMarkerArray.push(position);
+        console.log("array: "+toolsMarkerArray[0]);
         
         // Allow each marker to have an info window    
         google.maps.event.addListener(marker, 'click', (function(marker, i) {
+            let infoWindow = new google.maps.InfoWindow()
             return function() {
-                infoWindow.setContent(infoWindowContent[i][0]);
+                console.log(''+marker.position);
+                newPosition = marker.position;
+                console.log("newPosition "+ newPosition)
+                infoWindow.setContent(content+'<input type="button" id="btnDirections" value=Directions onclick="getDirections(toolsMarkerArray[0], newPosition)"></button>');
                 infoWindow.open(map, marker);
             }
-        })(marker, i));
-
-        // Automatically center the map fitting all markers on the screen
-        map.fitBounds(bounds);
-    }
+        })(marker));
 }
 
 let apiKey = 'AIzaSyAWFIyP0ivtZCbMWaqdl7sYS-IIDJkGQHs';
@@ -40,5 +46,6 @@ function geoCoding(){
 function getPosition(options){
     return new Promise(function (resolve, reject) {
         navigator.geolocation.getCurrentPosition(resolve, reject, options);
+        
     });
 }

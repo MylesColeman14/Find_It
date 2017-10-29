@@ -1,4 +1,3 @@
-
 let startLocation, endLocation;
 var markerArray = [];
 let stepDisplay = new google.maps.InfoWindow;
@@ -62,7 +61,7 @@ function showSteps(directionResult, markerArray, stepDisplay, map) {
 function attachInstructionText(stepDisplay, marker, text, map) {
     google.maps.event.addListener(marker, 'click', function() {
         // Open an info window when the marker is clicked on, containing the text
-          // of the step.
+        // of the step.
         stepDisplay.setContent(text);
         stepDisplay.open(map, marker);
     });
