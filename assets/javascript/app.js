@@ -32,7 +32,7 @@ function initialize() {
         mapTypeId: google.maps.MapTypeId.ROADMAP,
       });
 
-    $('.advance').on('click', function(){
+    /*$('#find-button').on('click', function(){
       console.log($('#start-location').val().trim());
       let request = {
         location: pyrmont,
@@ -42,7 +42,7 @@ function initialize() {
 
       service = new google.maps.places.PlacesService(map);
       service.nearbySearch(request, callback);
-    })
+    })*/
 
     content = 'My Location';
 
@@ -74,14 +74,15 @@ function initialize() {
         map.fitBounds(bounds);
         
         console.log(content);
-        priceChoice = $("#price-range").val().trim();
+        createMarker(markerLocation, content.name, map);
+        /*priceChoice = $("#price-range").val().trim();
         for(let j=0; j<results.length;j++){
           if(content.isOpen){
             if(content.priceLevel <= priceChoice){
               createMarker(markerLocation, content.name, map);
             }  
           } 
-        }
+        }*/
       }
     }
   }

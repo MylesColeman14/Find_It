@@ -58,7 +58,7 @@
         // $(document).off('click.tapTarget').on('click.tapTarget', function(e) {
         //   closeTapTarget();
         //   $(document).off('click.tapTarget');
-        // });
+        //});
 
         var throttledCalc = Materialize.throttle(function() {
           calculateTapTarget();

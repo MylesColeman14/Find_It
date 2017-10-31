@@ -12,8 +12,8 @@ function showform() {
 }
 
 function submission () {
-	//event.preventDefault();
-	//$("#weather-display").show();
-	//$("#twitter-display").show();
+	event.preventDefault();
+	$("#weather-display").show();
+	$("#twitter-display").show();
 	$('.tap-target').tapTarget('close');
 }
