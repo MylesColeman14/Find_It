@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Find It</title>
+
+      <!-- Google Font -->
+      <link href="https://fonts.googleapis.com/css?family=Comfortaa|Open+Sans" rel="stylesheet">
+
+      <!-- CSS -->
+      <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+      <link rel="stylesheet" type="text/css" href="tap-target.css">
+      <link rel="stylesheet" type="text/css" href="style.css">
+
+      <!-- JQuery -->
+      <script src="https://code.jquery.com/jquery.js"></script>
+      <!-- Materialize -->
+      <script type="text/javascript" src="materialize/js/materialize.js"></script>
+
+      <!-- Javascript -->
+      <script type="text/javascript" src="script.js"></script>
+
+</head>
+
+<body>
+
+  <header>
+    <p>Find It</p>
+  </header>
+
+  <section>
+
+    <div id="all"> 
+
+      <!-- Map populates in background -->
+      <div id="map-display"></div>    
+
+              <!-- Weather populates here -->
+      <div id="weather-display"></div>
+
+               <!-- Local Tweets populate here -->
+      <div id="twitter-display"></div> 
+
+    </div>
+
+  <!-- User input data here -->
+  <a id="menu" onclick="showform()" class="waves-effect waves-light btn btn-floating" ><i class="material-icons"></i></a>
+
+      <!-- Tap Target Structure -->
+      <div id="tap" class="tap-target" data-activates="menu">
+        <div class="tap-target-content">
+            
+            <!-- Manipulate form here -->
+            <form class="col s12" id="input_form">
+            
+              <div class="input-field col s12">
+                <input class="user_input" id="current_location" value="Current Location">
+              </div>
+              <div class="input-field col s12">
+                <input class="user_input" id="destination" placeholder="Destination">
+             </div>              
+              
+              <button id="submit" class="btn" onclick="submission()">Submit</button>
+        
+            </form>
+
+        </div>
+      </div>
+
+  </section>
+
+
+</body>
+
+
+</html>
