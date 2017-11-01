@@ -3,9 +3,12 @@
 
 <head>
   <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Find It</title>
 
-    <link href="https://fonts.googleapis.com/css?family=Comfortaa|Open+Sans" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Comfortaa|Open+Sans" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 
@@ -32,8 +35,8 @@
 
     <div id="all"> 
 
-      <!-- Map populates in background -->
-      <div id="map" style="width: 100%; height: 768px;"></div>    
+      <!-- Map populates here -->
+      <div id="map"></div>    
 
               <!-- Weather populates here -->
       <div id="weather-display"></div>
@@ -44,13 +47,13 @@
     </div>
 
   <!-- User input data here -->
-  <a id="menu" class="waves-effect waves-light btn btn-floating" ><i class="material-icons"></i></a>
+  <a id="menu" class="waves-effect waves-light btn btn-floating"><i class="material-icons"></i></a>
 
       <!-- Tap Target Structure -->
       <div id="tap" class="tap-target" data-activates="menu">
         <div class="tap-target-content">
             
-            <!-- Manipulate form here -->
+            <!-- Materialize form here -->
             <form class="col s12" id="input_form">
             
               <div class="input-field col s12">
@@ -66,6 +69,7 @@
 
         </div>
       </div>
+
 
   </section>
         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWFIyP0ivtZCbMWaqdl7sYS-IIDJkGQHs&libraries=places"></script>

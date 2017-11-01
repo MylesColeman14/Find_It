@@ -1,16 +1,11 @@
-//let apiKey = 'AIzaSyAWFIyP0ivtZCbMWaqdl7sYS-IIDJkGQHs';
-//let transitMode = ''
+
+var formshowing = false;
 function locationInput(){
 	event.preventDefault();
-	
-	//getDirections(startLocation,endLocation);
-
-	
-	
     
+    console.log(getTweets($("#end-location").val().trim()))
     if($("#start-location").val().trim() != "Current Location")
     {
-    	//event.preventDefault();
     	submission();
     	let startLocation = $("#start-location").val().trim();
 		let endLocation = $("#end-location").val().trim();
@@ -28,10 +23,41 @@ function locationInput(){
       };
 
       service = new google.maps.places.PlacesService(map);
-      service.nearbySearch(request, callback);
+      service.nearbySearch(request, Inputcallback);
     }
 }
-function callback(results, status) {
+function getTweets(keyWord){
+
+	queryURL= "http://localhost:8001/"+keyWord;
+	$.ajax({
+            url : queryURL,
+            method : "GET",
+        })
+        .done(function(response){
+            console.log(response.split(',break,'));
+            return response;
+        });
+}
+
+
+function showform() {
+	if (formshowing === false) {
+		formshowing === true;
+		$('.tap-target').tapTarget('open');
+	}
+
+	else if (formshowing === true) {
+		$('.tap-target').tapTarget('close');
+	}
+}
+
+function submission () {
+	event.preventDefault();
+	$("#weather-display").show();
+	$("#twitter-display").show();
+	$('.tap-target').tapTarget('close');
+}
+function Inputcallback(results, status) {
     console.log(results);
     let bounds = new google.maps.LatLngBounds();
 
@@ -57,26 +83,12 @@ function callback(results, status) {
         
         console.log(content);
         createMarker(markerLocation, content.name, map);
-        /*priceChoice = $("#price-range").val().trim();
-        for(let j=0; j<results.length;j++){
-          if(content.isOpen){
-            if(content.priceLevel <= priceChoice){
-              createMarker(markerLocation, content.name, map);
-            }  
-          } 
-        }*/
       }
     }
   }
-//function changeTravel(){
-	//$(this).attr('src', $(this).attr('data-animate'))
-//	transitMode = $(this).value;
-//}
+
 $(document).on("click", "#find-button", locationInput);
 $(document).on("click", "#menu", showform);
-//$(document).on("click", "#menu", showform);
-
-//$(document).on("click", ".transit-mode", changeTravel);
 
 
 
