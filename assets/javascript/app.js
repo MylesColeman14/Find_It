@@ -26,7 +26,7 @@ function initialize() {
     localPosition = position;
     pyrmont = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 
-    map = new google.maps.Map(document.getElementById('map'), {
+    map = new google.maps.Map(document.getElementById('map-display'), {
         center: pyrmont,
         zoom: 16,
         mapTypeId: google.maps.MapTypeId.ROADMAP,

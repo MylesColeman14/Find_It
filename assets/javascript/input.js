@@ -3,7 +3,8 @@ var formshowing = false;
 function locationInput(){
 	event.preventDefault();
     
-    console.log(getTweets($("#end-location").val().trim()))
+    getTweets($("#end-location").val().trim())
+
     if($("#start-location").val().trim() != "Current Location")
     {
     	submission();
@@ -34,8 +35,11 @@ function getTweets(keyWord){
             method : "GET",
         })
         .done(function(response){
-            console.log(response.split(',break,'));
-            return response;
+            let tweets = response.split(',break,');
+            for(var i=0;i < tweets.length;i++){
+            	$('#twitter-display').append(tweets[i]);
+            	$('#twitter-display').append('<br/>'+'<br/>');
+            }
         });
 }
 

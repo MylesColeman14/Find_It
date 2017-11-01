@@ -21,7 +21,7 @@ function createMarker(location, content, map){
                 console.log(''+marker.position);
                 newPosition = marker.position;
                 console.log("newPosition "+ newPosition)
-                infoWindow.setContent(content+'<input type="button" id="btnDirections" value=Directions onclick="getDirections(toolsMarkerArray[0], newPosition)"></button>');
+                infoWindow.setContent('<div class="infoWindow">'+ content + '</div>' +  "<br />" + '<input type="button" id="btnDirections" value=Directions onclick="getDirections(toolsMarkerArray[0], newPosition)"></button>');
                 infoWindow.open(map, marker);
             }
         })(marker));
