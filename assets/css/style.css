@@ -38,9 +38,10 @@ header p {
   grid-row: 1/3;
 }
 
-#weather-display {
+#twitter-display {
   height: 100%;
   width: 100%;
+  overflow: scroll;
   background-color: lightgray;
   box-shadow: 2px 2px 2px black;
   border-radius: 5px;
@@ -49,10 +50,9 @@ header p {
   grid-row: 1;
 }
 
-#twitter-display {
+#weather-display {
   background-color: lightgray;
   border-radius: 5px;
-  overflow: scroll;
   opacity: .9;
   box-shadow: 2px 2px 2px black;
   height: 100%;

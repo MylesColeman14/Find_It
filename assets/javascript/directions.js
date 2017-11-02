@@ -13,7 +13,7 @@ function getDirections(start, end) {
     zoom:7,
     center: chicago
     }
-    map = new google.maps.Map(document.getElementById('map'), mapOptions);
+    map = new google.maps.Map(document.getElementById('map-display'), mapOptions);
     directionsDisplay.setMap(map);
 
     directions();

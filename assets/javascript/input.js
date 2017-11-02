@@ -1,5 +1,6 @@
 
-var formshowing = false;
+let formshowing = false;
+let content;
 function locationInput(){
 	event.preventDefault();
     
@@ -29,7 +30,8 @@ function locationInput(){
 }
 function getTweets(keyWord){
 
-	queryURL= "http://localhost:8001/"+keyWord;
+	queryURL = 'https://boiling-sierra-99401.herokuapp.com/' + keyWord;
+
 	$.ajax({
             url : queryURL,
             method : "GET",
@@ -68,12 +70,20 @@ function Inputcallback(results, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
       for (let i = 0; i < results.length; i++) {
         let place = results[i];
-        let content = {
-          name: results[i].name,
-          priceLevel:results[i].price_level,
-          rating:results[i].rating,
-          isOpen:results[i].opening_hours.open_now
-        }
+        if(results[i].open_now === undefined){
+        	content = {
+         		name: results[i].name,
+        		priceLevel:results[i].price_level,
+        		rating:results[i].rating,
+        	}
+        }else{
+        	content = {
+        		name: results[i].name,
+        		priceLevel:results[i].price_level,
+        		rating:results[i].rating,
+        		isOpen:results[i].opening_hours.open_now
+        	}
+    	}
 
         let markerLocation ={
           coords: {
@@ -86,7 +96,7 @@ function Inputcallback(results, status) {
         map.fitBounds(bounds);
         
         console.log(content);
-        createMarker(markerLocation, content.name, map);
+        createMarker(markerLocation, content.name, map, content.priceLevel, content.rating, content.isOpen);
       }
     }
   }
