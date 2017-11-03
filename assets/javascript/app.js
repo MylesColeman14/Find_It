@@ -8,6 +8,7 @@ let localPosition;
 let contentCall;
 let priceChoice = 5;
 
+
 $(document).ready(function(){
     initialize();
 })
@@ -21,7 +22,6 @@ function initialize() {
   .catch((err) => {
       console.error(err.message);
   });
-
 
   function createMap(position, callbackMarker){
     localPosition = position;
@@ -83,8 +83,6 @@ function initialize() {
 }
 
 
-$('.advance').on('click', function(){
-})
 
 
 

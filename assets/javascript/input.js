@@ -3,7 +3,8 @@ let formshowing = false;
 let content;
 function locationInput(){
 	event.preventDefault();
-    
+    $('#twitter-display').empty();
+
     getTweets($("#end-location").val().trim())
 
     if($("#start-location").val().trim() != "Current Location")
@@ -28,21 +29,24 @@ function locationInput(){
       service.nearbySearch(request, Inputcallback);
     }
 }
+
+
 function getTweets(keyWord){
 
 	queryURL = 'https://boiling-sierra-99401.herokuapp.com/' + keyWord;
 
 	$.ajax({
-            url : queryURL,
-            method : "GET",
-        })
-        .done(function(response){
-            let tweets = response.split(',break,');
-            for(var i=0;i < tweets.length;i++){
-            	$('#twitter-display').append(tweets[i]);
-            	$('#twitter-display').append('<br/>'+'<br/>');
-            }
-        });
+        url : queryURL,
+        method : "GET",
+    })
+    .done(function(response){
+        let tweets = response.split(',break,');
+
+        for(var i=0;i < tweets.length;i++){
+            $('#twitter-display').append(tweets[i]);
+            $('#twitter-display').append('<br/>'+'<br/>');
+        }
+    });
 }
 
 
@@ -57,20 +61,23 @@ function showform() {
 	}
 }
 
+
 function submission () {
 	event.preventDefault();
 	$("#weather-display").show();
 	$("#twitter-display").show();
 	$('.tap-target').tapTarget('close');
 }
+
+
 function Inputcallback(results, status) {
     console.log(results);
     let bounds = new google.maps.LatLngBounds();
 
-    if (status == google.maps.places.PlacesServiceStatus.OK) {
+	if (status == google.maps.places.PlacesServiceStatus.OK) {
       for (let i = 0; i < results.length; i++) {
         let place = results[i];
-        if(results[i].open_now === undefined){
+        if(results[i].open_hours === undefined){
         	content = {
          		name: results[i].name,
         		priceLevel:results[i].price_level,
@@ -91,6 +98,7 @@ function Inputcallback(results, status) {
             longitude: place.geometry.viewport.b.b,
           }
         }
+
         var myLatLng = new google.maps.LatLng(markerLocation.coords.latitude, markerLocation.coords.longitude);
         bounds.extend(myLatLng);
         map.fitBounds(bounds);
@@ -99,7 +107,7 @@ function Inputcallback(results, status) {
         createMarker(markerLocation, content.name, map, content.priceLevel, content.rating, content.isOpen);
       }
     }
-  }
+}
 
 $(document).on("click", "#find-button", locationInput);
 $(document).on("click", "#menu", showform);
