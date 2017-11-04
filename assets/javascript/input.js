@@ -1,6 +1,8 @@
 
+
 let formshowing = false;
 let content;
+
 function locationInput(){
 	event.preventDefault();
     $('#twitter-display').empty();

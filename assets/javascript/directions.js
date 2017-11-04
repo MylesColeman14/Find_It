@@ -1,6 +1,7 @@
 let startLocation, endLocation;
 var markerArray = [];
 let stepDisplay = new google.maps.InfoWindow;
+<<<<<<< HEAD
 let config = {
     apiKey: "AIzaSyBp--rmslYdT1suBQiE6GUkciJD5H2GxVE",
     authDomain: "findit-2f795.firebaseapp.com",
@@ -16,6 +17,8 @@ let minTime = 1000;
 let minHour = 25;
 let counter = 0;
 
+=======
+>>>>>>> 25ba8a8a7390bc05de855a3b2729c9e3d16c07ad
 function getDirections(start, end) {
     console.log("Start: "+start);
     console.log("End: "+end);
@@ -68,6 +71,7 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
     directionsDisplay.setMap(map);
 }
 
+<<<<<<< HEAD
 $('#submit').on('click', function(){
     event.preventDefault()
     var start = $("#earlyTime").val();
@@ -95,12 +99,17 @@ function convertTime(userTime){
 }
 
 
+=======
+>>>>>>> 25ba8a8a7390bc05de855a3b2729c9e3d16c07ad
 function showSteps(directionResult, markerArray, stepDisplay, map) {
     // For each step, place a marker, and add the text to the marker's infowindow.
     // Also attach the marker to an array so we can keep track of it and remove it
     // when calculating new routes.
     var myRoute = directionResult.routes[0].legs[0];
+<<<<<<< HEAD
 
+=======
+>>>>>>> 25ba8a8a7390bc05de855a3b2729c9e3d16c07ad
     for (var i = 0; i < myRoute.steps.length; i++) {
         var marker = markerArray[i] = markerArray[i] || new google.maps.Marker;
         marker.setMap(map);
@@ -110,10 +119,16 @@ function showSteps(directionResult, markerArray, stepDisplay, map) {
 }
 function attachInstructionText(stepDisplay, marker, text, map) {
     google.maps.event.addListener(marker, 'click', function() {
+<<<<<<< HEAD
+=======
+        // Open an info window when the marker is clicked on, containing the text
+        // of the step.
+>>>>>>> 25ba8a8a7390bc05de855a3b2729c9e3d16c07ad
         stepDisplay.setContent(text);
         stepDisplay.open(map, marker);
     });
 }
+<<<<<<< HEAD
 function trafficData(timeMin, timeMax){
     let directionsService = new google.maps.DirectionsService;
     let time  = new Date();
@@ -159,3 +174,5 @@ function trafficData(timeMin, timeMax){
         }
     });
 }
+=======
+>>>>>>> 25ba8a8a7390bc05de855a3b2729c9e3d16c07ad

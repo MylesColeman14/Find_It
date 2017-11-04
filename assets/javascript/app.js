@@ -22,6 +22,8 @@ function initialize() {
       console.error(err.message);
   });
 
+
+
   function createMap(position, callbackMarker){
     localPosition = position;
     pyrmont = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
@@ -33,15 +35,28 @@ function initialize() {
       });
     content = 'My Location';
 
+
+    callbackMarker(localPosition, content, map);
+
+    $('.advance').on('click', function(){
+      console.log($('#start-location').val().trim());
+      let request = {
+        location: pyrmont,
+        radius: '5000',
+        keyword: [$('#start-location').val().trim()]
+      };
+
+      service = new google.maps.places.PlacesService(map);
+      service.nearbySearch(request, callback);
+    })
+
+    content = 'My Location';
+
     callbackMarker(localPosition, content, map);
   }
+
+  
+
+  }
 }
-
-
-
-
-
-
-
-
 
