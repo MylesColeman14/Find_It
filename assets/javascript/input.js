@@ -64,7 +64,7 @@ function showform() {
 
 function submission () {
 	event.preventDefault();
-	$("#weather-display").show();
+	$("#traffic-display").show();
 	$("#twitter-display").show();
 	$('.tap-target').tapTarget('close');
 }

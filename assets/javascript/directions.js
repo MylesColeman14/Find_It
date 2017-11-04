@@ -66,8 +66,8 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
     });
     //let start = convertTime(start);
     //let end = convertTime(end);
-    let start = convertTime('09:21');
-    let end = convertTime('10:00');
+    var start = $("#earlyTime").val();
+    var end = $("#lateTime").val();
     
     trafficData(start, end);
   
@@ -113,6 +113,7 @@ function attachInstructionText(stepDisplay, marker, text, map) {
     });
 }
 function trafficData(timeMin, timeMax){
+    event.preventDefault();
     let directionsService = new google.maps.DirectionsService;
     let time  = new Date();
 
@@ -148,7 +149,7 @@ function trafficData(timeMin, timeMax){
             else{
                 //This is where we need to update traffic div!
                 console.log('Traffic Time: ' + minTime + '<br/>' + 'Leave at: ' + minHour + 'pm');
-                $('#weather-display').append('Traffic Time: ' + minTime + '<br/>' + 'Leave at: ' + minHour + 'pm');
+                $('#traffic-display').append('Traffic Time: ' + minTime + '<br/>' + 'Leave at: ' + minHour + 'pm');
               
             }
         } 

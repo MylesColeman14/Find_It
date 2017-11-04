@@ -43,7 +43,26 @@
       <div id="twitter-display"></div>
 
                <!-- Local Tweets populate here -->
-      <div id="weather-display"></div> 
+      <div id="traffic-display">
+         
+         <div id="timeInput">
+
+           <form class="col s12">
+
+             <div class="input-field col s8">
+               <input class="user_input" id="earlyTime" placeholder="Earliest [hh:mm Military]">
+             </div>
+             <div class="input-field col s8">
+               <input class="user_input" id="lateTime" placeholder="Latest [hh:mm Military]">
+             </div>
+
+             <button id="submit" class="btn" onclick="timeSubmit()">Submit</button>
+           
+           </form>
+
+         </div>
+
+     </div> 
 
     </div>
 
