@@ -37,28 +37,44 @@ header p {
   grid-column: 1;
   grid-row: 1/3;
 }
+h4{
+    color: white;
+    font-size: 20px;
+    line-height: 24px;
+}
 
 #twitter-display {
-  height: 100%;
-  width: 100%;
-  overflow: scroll;
-  background-color: lightgray;
-  box-shadow: 2px 2px 2px black;
-  border-radius: 5px;
-  opacity: .9;
-  grid-column: 2;
-  grid-row: 1;
+    background-color: black;
+    border-radius: 5px;
+    overflow: scroll;
+    opacity: .9;
+    box-shadow: 2px 2px 2px black;
+    height: 100%;
+    width: 100%;
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+#tweets {
+    margin: auto;
+    font-size: 16px;
+    line-height: 16px;
 }
 
 #traffic-display {
-  background-color: lightgray;
-  border-radius: 5px;
-  opacity: .9;
-  box-shadow: 2px 2px 2px black;
-  height: 100%;
-  width: 100%;
-  grid-column: 2;
-  grid-row: 2;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    box-shadow: 2px 2px 2px black;
+    border-radius: 5px;
+    opacity: .9;
+    grid-column: 2;
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    color:white;
 }
 #timeInput {
     width: 90%;

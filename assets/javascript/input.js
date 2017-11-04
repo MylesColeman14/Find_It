@@ -43,7 +43,7 @@ function getTweets(keyWord){
         let tweets = response.split(',break,');
 
         for(var i=0;i < tweets.length;i++){
-            $('#twitter-display').append(tweets[i]);
+            $('#twitter-display').append("<div id='tweets'>" + tweets[i] + "</div>");
             $('#twitter-display').append('<br/>'+'<br/>');
         }
     });

@@ -64,16 +64,20 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
             window.alert('Directions request failed due to ' + status);
         }
     });
-    //let start = convertTime(start);
-    //let end = convertTime(end);
-    var start = $("#earlyTime").val();
-    var end = $("#lateTime").val();
-    
-    trafficData(start, end);
   
-
     directionsDisplay.setMap(map);
 }
+
+$('#submit').on('click', function(){
+    event.preventDefault()
+    var start = $("#earlyTime").val();
+    var end = $("#lateTime").val();
+
+    start = convertTime(start);
+    end = convertTime(end);
+    
+    trafficData(start, end);
+});
 
 
 function convertTime(userTime){
@@ -106,18 +110,15 @@ function showSteps(directionResult, markerArray, stepDisplay, map) {
 }
 function attachInstructionText(stepDisplay, marker, text, map) {
     google.maps.event.addListener(marker, 'click', function() {
-        // Open an info window when the marker is clicked on, containing the text
-        // of the step.
         stepDisplay.setContent(text);
         stepDisplay.open(map, marker);
     });
 }
 function trafficData(timeMin, timeMax){
-    event.preventDefault();
     let directionsService = new google.maps.DirectionsService;
     let time  = new Date();
 
-    time.setDate(4);
+    time.setDate(5);
     time.setHours(timeMin + counter);
     time.setMinutes(0);
     directionsService.route({
@@ -149,7 +150,7 @@ function trafficData(timeMin, timeMax){
             else{
                 //This is where we need to update traffic div!
                 console.log('Traffic Time: ' + minTime + '<br/>' + 'Leave at: ' + minHour + 'pm');
-                $('#traffic-display').append('Traffic Time: ' + minTime + '<br/>' + 'Leave at: ' + minHour + 'pm');
+                $('#traffic-display').html("<div id='tweets'>" + 'Best Time to Leave' + '<br />' + 'Traffic Time: '  + minTime + ' min <br/>' + 'Leave at: ' + minHour + 'pm'+'</div>');
               
             }
         } 
